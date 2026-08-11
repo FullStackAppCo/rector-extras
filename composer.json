@@ -37,6 +37,9 @@
   },
   "scripts": {
     "post-autoload-dump": [],
+    "refactor": [
+      "@php vendor/bin/rector process"
+    ],
     "test": [
       "@php vendor/bin/phpunit -d memory_limit=2G"
     ]
