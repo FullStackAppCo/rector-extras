@@ -1,0 +1,58 @@
+{
+  "$schema": "https://getcomposer.org/schema.json",
+  "version": "0.1.0",
+  "name": "fsac/rector-extras",
+  "description": "Additional Rector rules for Laravel",
+  "keywords": [
+    "laravel",
+    "rector"
+  ],
+  "homepage": "https://github.com/fsac/rector-extras",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joby Harding",
+      "email": "code@fullstackappco.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "illuminate/support": "^12.0||^13.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^10.0||^11.0",
+    "phpunit/phpunit": "^13.0",
+    "rector/rector": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fsac\\RectorExtras\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Fsac\\RectorExtras\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [],
+    "test": [
+      "@php vendor/bin/phpunit -d memory_limit=2G"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [],
+      "aliases": {}
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
