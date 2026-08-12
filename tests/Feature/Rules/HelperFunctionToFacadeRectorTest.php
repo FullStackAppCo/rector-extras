@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fsac\RectorExtras\Tests\Feature\Rules;
+namespace FullStackAppCo\RectorExtras\Tests\Feature\Rules;
 
 use Iterator;
 use PHPUnit\Framework\Attributes\DataProvider;
