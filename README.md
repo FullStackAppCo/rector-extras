@@ -1,6 +1,6 @@
 # Rector Extras
 
-Additional [Rector](https://getrector.com) rules for Laravel.
+Additional [Rector](https://getrector.com) rules for Laravel to roll it the FSAC way.
 
 > ⚠️ This package has not yet reached v1 and may introduce breaking changes between releases. Pin to a specific version.
 
