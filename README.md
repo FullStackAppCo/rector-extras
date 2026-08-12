@@ -2,6 +2,8 @@
 
 Additional [Rector](https://getrector.com) rules for Laravel.
 
+> ⚠️ This package has not yet reached v1 and may introduce breaking changes between releases. Pin to a specific version.
+
 ## Installation
 
 ```bash
