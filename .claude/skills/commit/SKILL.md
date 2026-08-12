@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Commit staged or working-tree changes as atomic commits with terse single-line messages ending in a GitHub issue number. Use whenever the user asks to commit work.
+description: Commit staged or working-tree changes as atomic commits with terse single-line messages ending in a GitHub issue number when there is an associated issue. Use whenever the user asks to commit work.
 ---
 
 # Commit
@@ -17,7 +17,7 @@ Create git commits following this project's conventions.
    Added qa checks #8
    ```
 
-   If the issue number isn't known, check recent `git log` for the issue currently being worked on, or ask the user which issue this relates to.
+   If the issue number isn't known, check recent `git log` for the issue currently being worked on, or ask the user which issue this relates to. It's OK to omit the issue number if there is no associated issue.
 
 4. **Message shape** — subject line, blank line, then the co-author trailer only:
 
@@ -32,7 +32,7 @@ Create git commits following this project's conventions.
 1. Run `git status` and `git diff` to see what's changed.
 2. Group the changes into logical units. One unit → one commit.
 3. For each unit: stage only its files/hunks, then commit with a message following the shape above (terse subject + co-author trailer, nothing else).
-4. Verify with `git log --oneline` that each subject is terse and ends with `#<issue>`.
+4. Verify with `git log --oneline` that each subject is terse and ends with `#<issue>` when there is an associated issue.
 
 ## Don'ts
 
