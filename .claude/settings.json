@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer analyse:*)",
+      "Bash(composer format:*)",
+      "Bash(composer refactor:*)",
+      "Bash(composer test:*)",
+      "Bash(find:*)",
+      "Bash(git add:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git commit:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(auth.json)",
+      "Read(.npmrc)",
+      "Edit(node_modules/**)",
+      "Edit(vendor/**)"
+    ]
+  }
+}
