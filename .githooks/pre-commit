@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-#
-# Pre-commit hook.
-#
-# Runs static analysis, refactoring, and formatting against the PHP files that
-# are staged for commit — changed files only — using `herd composer`.
-#
-# Enable with: git config core.hooksPath .githooks (composer install does this).
 
 set -euo pipefail
 
