@@ -1,6 +1,6 @@
 /vendor
 /build
-/.claude
+/.claude/*
 !/.claude/settings.json
 !/.claude/skills
 /.phpunit.cache
