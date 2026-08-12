@@ -6,6 +6,21 @@ Additional [Rector](https://getrector.com) rules for Laravel.
 
 ## Installation
 
+As an internal tool this package is not currently available on Packagist. To install it, add a `vcs` repository entry to your project's `composer.json`:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/FullStackAppCo/rector-extras"
+        }
+    ]
+}
+```
+
+Then require the package:
+
 ```bash
 composer require --dev fsac/rector-extras
 ```
