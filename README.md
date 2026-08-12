@@ -6,7 +6,7 @@ Additional [Rector](https://getrector.com) rules for Laravel.
 
 ## Installation
 
-This package is not available on Packagist. To install it, add a `vcs` repository entry to your project's `composer.json`:
+As an internal tool this package is not currently available on Packagist. To install it, add a `vcs` repository entry to your project's `composer.json`:
 
 ```json
 {
