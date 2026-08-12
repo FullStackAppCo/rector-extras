@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Fsac\RectorExtras\Rules\HelperFunctionToFacadeRector;
+use FullStackAppCo\RectorExtras\Rules\HelperFunctionToFacadeRector;
 use Rector\Config\RectorConfig;
 
 return RectorConfig::configure()

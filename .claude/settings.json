@@ -2,10 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(composer analyse:*)",
+      "Bash(composer dump-autoload)",
       "Bash(composer format:*)",
       "Bash(composer refactor:*)",
       "Bash(composer test:*)",
       "Bash(find:*)",
+      "Bash(gh issue list:*)",
       "Bash(gh pr create:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
