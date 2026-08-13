@@ -22,7 +22,7 @@ As an internal tool this package is not currently available on Packagist. To ins
 Then require the package:
 
 ```bash
-composer require --dev fsac/rector-extras
+composer require --dev fsac/rector-extras "0.1.0"
 ```
 
 ## Usage
