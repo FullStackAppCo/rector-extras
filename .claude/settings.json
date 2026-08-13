@@ -1,26 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(composer analyse *)",
-      "Bash(composer dump-autoload *)",
-      "Bash(composer format *)",
-      "Bash(composer refactor *)",
-      "Bash(composer test *)",
-      "Bash(find *)",
-      "Bash(gh issue list *)",
-      "Bash(gh pr create *)",
-      "Bash(gh run list *)",
-      "Bash(gh run view *)",
-      "Bash(git add *)",
-      "Bash(git branch)",
-      "Bash(git branch -m *)",
-      "Bash(git check-ignore *)",
-      "Bash(git checkout *)",
-      "Bash(git commit *)",
-      "Bash(git push *)",
-      "Bash(ls *)",
-      "Bash(tree *)"
-    ],
     "deny": [
       "Read(.env)",
       "Read(.env.*)",
