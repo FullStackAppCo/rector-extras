@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace FullStackAppCo\RectorExtras\Rules;
 
+use Illuminate\Support\Collection;
 use PhpParser\Node;
 use PhpParser\Node\Expr\Array_;
 use PhpParser\Node\Expr\FuncCall;
@@ -65,7 +66,7 @@ class HelperFunctionToFacadeRector extends AbstractRector
 
     protected const string FACADE_NAMESPACE = 'Illuminate\Support\Facades\\';
 
-    protected const string COLLECTION_CLASS = 'Illuminate\Support\Collection';
+    protected const string COLLECTION_CLASS = Collection::class;
 
     public function getRuleDefinition(): RuleDefinition
     {
