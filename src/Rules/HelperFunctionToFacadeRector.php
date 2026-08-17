@@ -16,8 +16,9 @@ use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
 /**
- * Converts Laravel's global helper functions to their equivalent facade calls,
- * e.g. `config('app.name')` becomes `Config::get('app.name')`.
+ * Converts Laravel's global helper functions to their equivalent static calls,
+ * e.g. `config('app.name')` becomes `Config::get('app.name')` and `collect($items)`
+ * becomes `Collection::make($items)`.
  */
 class HelperFunctionToFacadeRector extends AbstractRector
 {
@@ -64,19 +65,23 @@ class HelperFunctionToFacadeRector extends AbstractRector
 
     protected const string FACADE_NAMESPACE = 'Illuminate\Support\Facades\\';
 
+    protected const string COLLECTION_CLASS = 'Illuminate\Support\Collection';
+
     public function getRuleDefinition(): RuleDefinition
     {
         return new RuleDefinition(
-            'Convert Laravel global helper functions to their equivalent facade calls',
+            'Convert Laravel global helper functions to their equivalent static calls',
             [
                 new CodeSample(
                     <<<'CODE_SAMPLE'
 $name = config('app.name');
 $user = auth()->user();
+$items = collect([1, 2, 3]);
 CODE_SAMPLE,
                     <<<'CODE_SAMPLE'
 $name = Config::get('app.name');
 $user = Auth::user();
+$items = Collection::make([1, 2, 3]);
 CODE_SAMPLE,
                 ),
             ],
@@ -138,9 +143,24 @@ CODE_SAMPLE,
         }
 
         $name = $this->getName($funcCall);
+
+        if ($name === null) {
+            return null;
+        }
+
+        // collect() has no facade; it maps to Collection::make() and, unlike
+        // the helpers below, converts even when called with no arguments.
+        if ($name === 'collect') {
+            return new StaticCall(
+                new FullyQualified(self::COLLECTION_CLASS),
+                new Identifier('make'),
+                $funcCall->args,
+            );
+        }
+
         $args = $funcCall->getArgs();
 
-        if ($name === null || $args === []) {
+        if ($args === []) {
             return null;
         }
 

@@ -11,4 +11,7 @@ function skippedHelpers()
     // Helpers without a facade equivalent are untouched.
     $path = base_path('config');
     abort(404);
+
+    // First-class callables are untouched.
+    $callable = collect(...);
 }
