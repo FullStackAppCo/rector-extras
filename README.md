@@ -41,7 +41,7 @@ return RectorConfig::configure()
 
 ## Rules
 
-- `HelperFunctionToFacadeRector` — converts Laravel's global helper functions to their equivalent facade calls, e.g. `config('app.name')` becomes `Config::get('app.name')`.
+- `HelperFunctionToFacadeRector` — converts Laravel's global helper functions to their equivalent static calls, e.g. `config('app.name')` becomes `Config::get('app.name')` and `collect($items)` becomes `Collection::make($items)`.
 
 ## License
 
